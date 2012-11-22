@@ -8,7 +8,8 @@ var converter = new Markdown.Converter()
 $(function() {
   $("#input").keyup(function() {
     html = converter.makeHtml($("#input").val())
-    if (html) $("#output").html(html)
+    // if (html)
+    $("#output").html(html)
   })
 })
 </script>
