@@ -1,0 +1,27 @@
+<!-- keywords: live preview -->
+
+<script src="../jquery.js"></script>
+<script src="node_modules/pagedown/Markdown.Converter.js"></script>
+<script src="node_modules/pagedown/Markdown.Sanitizer.js"></script>
+<script>
+var converter = new Markdown.Converter()
+$(function() {
+  $("#input").keyup(function() {
+    html = converter.makeHtml($("#input").val())
+    if (html) $("#output").html(html)
+  })
+})
+</script>
+<style>
+  #output { background-color: #ffe0e0 }
+</style>
+
+Type your Markdown:<br>
+<textarea cols=80 rows=10 id="input"></textarea>
+
+<p>
+
+Output:
+<div id=output></div>
+
+
